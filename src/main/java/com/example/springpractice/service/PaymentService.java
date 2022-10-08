@@ -44,8 +44,8 @@ public class PaymentService {
         this.paymentRepository.deleteById(id);
     }
 
-    public List<Payment> paymentList() {
-        return this.paymentRepository.findAll();
+    public List<Payment> paymentList(PaymentStatus success) {
+        return this.paymentRepository.findAllByStatusPayment(PaymentStatus.SUCCESS);
     }
 
 }

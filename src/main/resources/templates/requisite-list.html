@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>All Requisite</title>
+</head>
+<body>
+<h3>All Requisite</h3>
+<table border="3">
+    <tr>
+        <th>ID</th>
+        <th>REQUISITE</th>
+        <th>FIO</th>
+        <th>STATUS REQUISITE</th>
+    </tr>
+    <tr th:each="requisite : ${requisites}">
+        <td th:text="${requisite.id}"></td>
+        <td th:text="${requisite.requisite}"></td>
+        <td th:text="${requisite.fio}"></td>
+        <td th:text="${requisite.statusRequisite}"></td>
+    </tr>
+</table>
+
+<br>
+<form th:action="@{/hello-requisite}" method="post">
+    <input type="submit" value="Return Hello">
+</form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Requisite History</title>
+</head>
+<body>
+<h3>All History Requisite</h3>
+<table border="3">
+    <tr>
+        <th>ID</th>
+        <th>OPERATIONS</th>
+        <th>REQUEST DATA</th>
+        <th>RESPONSE DATA</th>
+        <th>REQUEST DATE</th>
+    </tr>
+    <tr th:each="requestHistory : ${requestHistories}">
+        <td th:text="${requestHistory.id}"></td>
+        <td th:text="${requestHistory.operations}"></td>
+        <td th:text="${requestHistory.requestData}"></td>
+        <td th:text="${requestHistory.responseData}"></td>
+        <td th:text="${requestHistory.requestDate}"></td>
+    </tr>
+</table>
+</body>
+</html>

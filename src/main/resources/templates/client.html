@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Save Client</title>
+</head>
+<body>
+<h3>Create client</h3>
+<form th:action="@{save-client}" method="post" th:object="${client}">
+    <div><label> Login : <input th:value="${login}" type="text" name="login"/> </label></div>
+    <div><label> Password : <input th:value="${password}" type="password" name="password"/> </label></div>
+    <div><input type="submit" value="Save"/></div>
+</form>
+</body>
+</html>

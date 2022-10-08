@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Get All Payment</title>
+</head>
+<body>
+<h3>All Payments</h3>
+<table border="3">
+    <tr>
+        <th>ID</th>
+        <th>AMOUNT</th>
+        <th>CREATE DATE</th>
+        <th>CURRENCY</th>
+        <th>REQUISITE</th>
+        <th>STATUS PAYMENT</th>
+        <th>CLIENT</th>
+    </tr>
+    <tr th:each="payment : ${payments}">
+        <td th:text="${payment.id}"></td>
+        <td th:text="${payment.amount}"></td>
+        <td th:text="${payment.createDate}"></td>
+        <td th:text="${payment.currency}"></td>
+        <td th:text="${payment.requisitePayment}"></td>
+        <td th:text="${payment.statusPayment}"></td>
+        <td th:text="${payment.client.login}"></td>
+    </tr>
+</table>
+</body>
+</html>

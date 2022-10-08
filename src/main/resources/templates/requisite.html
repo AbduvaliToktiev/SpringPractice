@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Save requisite</title>
+</head>
+<body>
+<h3>Create Requisite</h3>
+<form th:action="@{/requisite-save}" method="post" th:object="${requisite}">
+    <div><label> Requisite : <input th:value="${requisite}" type="text" name="requisite"/> </label></div>
+    <div><label> FIO : <input th:value="${fio}" type="text" name="fio"/> </label></div>
+    <div><input type="submit" value="Save"/></div>
+</form>
+</body>
+</html>

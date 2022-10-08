@@ -5,6 +5,8 @@ import com.example.springpractice.entity.RequestHistory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class RequestHistoryService {
 
@@ -13,5 +15,9 @@ public class RequestHistoryService {
 
     public void save(RequestHistory requestHistory) {
         this.requestHistoryRepository.save(requestHistory);
+    }
+
+    public List<RequestHistory> getAllReqHistory() {
+        return this.requestHistoryRepository.findAll();
     }
 }

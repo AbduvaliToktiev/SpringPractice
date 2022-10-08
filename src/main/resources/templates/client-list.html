@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>All Client</title>
+</head>
+<body>
+<h3>All Client</h3>
+<table border="3">
+    <tr>
+        <th>ID</th>
+        <th>LOGIN</th>
+        <th>PASSWORD</th>
+        <th>STATUS CLIENT</th>
+    </tr>
+    <tr th:each="client : ${clients}">
+        <td th:text="${client.id}"></td>
+        <td th:text="${client.login}"></td>
+        <td th:text="${client.password}"></td>
+        <td th:text="${client.statusClient}"></td>
+    </tr>
+</table>
+
+<br>
+<form th:action="@{/hello-client}" method="post">
+    <input type="submit" value="Return Hello">
+</form>
+</body>
+</html>

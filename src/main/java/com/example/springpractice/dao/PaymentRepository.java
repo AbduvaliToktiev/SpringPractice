@@ -9,6 +9,8 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Repository
 public interface PaymentRepository extends JpaRepository<Payment, Long> {
 
@@ -25,4 +27,6 @@ public interface PaymentRepository extends JpaRepository<Payment, Long> {
                        @Param(value = "requisite") String requisite,
                        @Param(value = "status_payment") String paymentStatus,
                        @Param(value = "id") Long id);
+
+    List<Payment> findAllByStatusPayment(PaymentStatus success);
 }

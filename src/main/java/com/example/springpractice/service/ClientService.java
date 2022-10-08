@@ -31,7 +31,7 @@ public class ClientService {
         this.clientRepository.deleteById(id);
     }
 
-    public List<Client> clients() {
+    public List<Client> allClient() {
         return this.clientRepository.findAll();
     }
 }
