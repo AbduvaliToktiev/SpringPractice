@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
@@ -20,5 +22,10 @@ public class RequisiteHistoryController {
         List<RequestHistory> requestHistories = requestHistoryService.getAllReqHistory();
         model.addAttribute("requestHistories", requestHistories);
         return "requisiteHistory-list";
+    }
+
+    @RequestMapping(value = "/hello-requisite-history", method = RequestMethod.POST)
+    public String hello() {
+        return "hello";
     }
 }

@@ -55,7 +55,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.
                 authorizeRequests()
                 .antMatchers("/", "/login", "/register", "/registration").permitAll()
-                .antMatchers("/create-client", "/save-client", "/create-requisite", "/requisite-save", "/all-payments").authenticated()
+                .antMatchers("/create-client", "/save-client", "/create-requisite", "/requisite-save", "/all-payments", "/get-payments-by-period", "/get-payments-by-date").authenticated()
                 .and().csrf().disable()
                 .formLogin().successHandler(customizeAuthenticationSuccessHandler)
                 .loginPage("/login").failureUrl("/login?error=true")

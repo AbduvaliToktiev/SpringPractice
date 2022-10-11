@@ -9,6 +9,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -27,6 +28,11 @@ public interface PaymentRepository extends JpaRepository<Payment, Long> {
                        @Param(value = "requisite") String requisite,
                        @Param(value = "status_payment") String paymentStatus,
                        @Param(value = "id") Long id);
+
+    @Query(value = "select * from simple_web_program.payments " +
+            "where create_date between :fromDate and :toDate", nativeQuery = true)
+    List<Payment> getAllByPeriod(@Param(value = "fromDate") Date fromDate,
+                                 @Param(value = "toDate") Date toDate);
 
     List<Payment> findAllByStatusPayment(PaymentStatus success);
 }

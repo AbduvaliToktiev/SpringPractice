@@ -48,4 +48,7 @@ public class PaymentService {
         return this.paymentRepository.findAllByStatusPayment(PaymentStatus.SUCCESS);
     }
 
+    public List<Payment> getAllByPeriod(Date fromDate, Date toDate) {
+        return this.paymentRepository.getAllByPeriod(fromDate, toDate);
+    }
 }

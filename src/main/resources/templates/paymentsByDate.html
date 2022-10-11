@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Get All By Date Payments</title>
+</head>
+<body>
+<form th:action="@{/get-payments-by-period}" method="get">
+    <div><label> From Date : <input type="date" name="fromDate"/></label></div>
+    <div><label> To Date : <input type="date" name="toDate"/></label></div>
+    <div>
+        <input type="submit" value="Get Payments"/>
+    </div>
+</form>
+</body>
+</html>

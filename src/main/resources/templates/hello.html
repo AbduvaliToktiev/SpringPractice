@@ -6,6 +6,7 @@
 </head>
 <body>
 <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+
 <form th:action="@{/logout}" method="post">
     <input type="submit" value="Sign Out"/>
 </form>
@@ -34,5 +35,10 @@
 <form th:action="@{/get-all-client}" method="get">
     <input type="submit" value="All Client">
 </form>
+
+<form th:action="@{/get-payments-by-date}" method="get">
+    <input type="submit" value="All Payments Date">
+</form>
+
 </body>
 </html>

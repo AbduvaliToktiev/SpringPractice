@@ -27,5 +27,10 @@
         <td th:text="${payment.client.login}"></td>
     </tr>
 </table>
+
+<br>
+<form th:action="@{hello-payment}" method="post">
+    <input type="submit" value="Return Hello">
+</form>
 </body>
 </html>
