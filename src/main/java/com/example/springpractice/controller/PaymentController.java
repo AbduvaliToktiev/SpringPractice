@@ -30,6 +30,11 @@ public class PaymentController {
         return "payments-list";
     }
 
+    @GetMapping(value = "/get-payments-by-date")
+    public String getPaymentsByDate() {
+        return "paymentsByDate";
+    }
+
     @GetMapping(value = "/get-payments-by-period")
     public ModelAndView getByPaymentsDate(@RequestParam(name = "fromDate") String fromDate,
                                           @RequestParam(name = "toDate") String toDate) throws ParseException {
@@ -40,10 +45,6 @@ public class PaymentController {
         return modelAndView;
     }
 
-    @GetMapping(value = "/get-payments-by-date")
-    public String getPaymentsByDate() {
-        return "paymentsByDate";
-    }
 
     @RequestMapping(value = "/hello-payment", method = RequestMethod.POST)
     public String hello() {
