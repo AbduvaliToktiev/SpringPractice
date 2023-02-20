@@ -32,7 +32,7 @@ public class UsersController {
 
         ModelAndView model = new ModelAndView();
         if (error != null) {
-            model.addObject("error", "Почта или параоль неверны");
+            model.addObject("error", "Почта или пароль неверны");
             model.setViewName("/login");
         }
         if (logout != null) {
@@ -53,7 +53,6 @@ public class UsersController {
         modelAndView.addObject("user", new Users());
         return modelAndView;
     }
-
 
     @PostMapping(value = "/registration")
     public String registration(@ModelAttribute(name = "user") Users user) {

@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -35,6 +37,16 @@ public class ClientController {
         model.addAttribute("clients", clients);
         return "client-list";
     }
+
+//    @GetMapping(path = "/modalSaveClient")
+//    private String submitEmployee(Model model) {
+//        ModelAndView modelAndView = new ModelAndView("client-list");
+//        List<Client> clientTest = new ArrayList<>();
+//        model.addAttribute("clientTest", clientTest);
+//        List<Client> clients = clientService.allClient();
+//        model.addAttribute("clients", clients);
+//        return "hello";
+//    }
 
     @RequestMapping(value = "/hello-client", method = RequestMethod.POST)
     public String hello() {

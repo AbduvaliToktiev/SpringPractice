@@ -14,7 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -38,7 +37,7 @@ public class PaymentController {
     @GetMapping(value = "/get-payments-by-period")
     public ModelAndView getByPaymentsDate(@RequestParam(name = "fromDate") String fromDate,
                                           @RequestParam(name = "toDate") String toDate) throws ParseException {
-        ModelAndView modelAndView = new ModelAndView("payments");
+        ModelAndView modelAndView = new ModelAndView("payments-list");
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         modelAndView.addObject("payments",
                 this.paymentService.getAllByPeriod(simpleDateFormat.parse(fromDate), simpleDateFormat.parse(toDate)));
